@@ -94,4 +94,93 @@ align-items: center; #alinea en centro en vertical
 
 
 
+* media queries: Son reglas en CSS que te permiten aplicar estilos diferentes dependiendo de las características del dispositivo del usuario, como:
+
+El ancho de la pantalla
+
+La resolución
+
+Si es una pantalla táctil o no
+
+La orientación: horizontal (landscape) o vertical (portrait)
+
+La estructura básica de un media query es así:
+
+@media (max-width: 768px) { / Teléfonos grandes y tablets / }
+@media (max-width: 1024px) { / Tablets y laptops pequeñas / }
+@media (min-width: 1025px) { / Laptops y escritorios grandes */ }
+
+@media (condición) {
+  /* CSS que solo se aplica si la condición se cumple */
+}
+
+Por ejemplo:
+
+@media (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+}
+Eso significa:
+📱 “Si la pantalla tiene 768 píxeles o menos de ancho, cambia el fondo del cuerpo a azul claro.”
+
+
+Condición	¿Qué hace?
+max-width: 768px	Aplica estilos si la pantalla es menor o igual a 768px
+min-width: 1024px	Aplica estilos si la pantalla es mayor o igual a 1024px
+
+
+
+1. Para celulares pequeños:
+css
+Copiar
+Editar
+@media (max-width: 480px) {
+  .menu {
+    flex-direction: column;
+    font-size: 14px;
+  }
+}
+2. Para tablets:
+css
+Copiar
+Editar
+@media (max-width: 768px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+}
+3. Para laptops y pantallas grandes:
+css
+Copiar
+Editar
+@media (min-width: 1025px) {
+  .contenedor {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+
+/* Estilos base (para móviles) */
+
+body {
+  font-size: 16px;
+  padding: 10px;
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Laptops y escritorios */
+@media (min-width: 1025px) {
+  body {
+    font-size: 20px;
+    padding: 40px;
+  }
+}
 
